@@ -17,8 +17,8 @@ public class Room {
         this.player = player;
         this.monsterList = monsterList;
         this.lootList = lootList;
-        this.currentLoot = currentLoot;
-        this.currentMonster = currentMonster;
+        this.currentLoot = chooseRandomLoot();
+        this.currentMonster = chooseRandomMonster();
     }
 
     public Player getPlayer() {
@@ -47,5 +47,28 @@ public class Room {
 
     public void setLoot(Loot loot) {
         this.currentLoot = loot;
+    }
+
+    public Monster chooseRandomMonster(){
+        int min = 0;
+        int max = monsterList.size()-1;
+
+        int newMonsterIndex = (int)Math.floor(Math.random()*(max-min+1)+min);
+        return monsterList.get(newMonsterIndex);
+    }
+
+    public Loot chooseRandomLoot(){
+        int min = 0;
+        int max = lootList.size()-1;
+
+        int newLootIndex = (int)Math.floor(Math.random()*(max-min+1)+min);
+        return lootList.get(newLootIndex);
+    }
+
+    public void attackHappens(){
+        // What type of player is this?
+        if(this.player){
+
+        }
     }
 }

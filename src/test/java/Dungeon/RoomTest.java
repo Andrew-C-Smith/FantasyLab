@@ -69,4 +69,6 @@ public class RoomTest {
         room.setLoot(lootList.get(0));
         assertNotNull(room.getCurrentLoot());
     }
+
+    
 }

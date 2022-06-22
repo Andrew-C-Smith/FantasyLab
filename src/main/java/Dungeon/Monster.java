@@ -23,4 +23,9 @@ public class Monster {
     public int getAttack() {
         return attack;
     }
+
+    public void takeDamage(int damage) {
+        this.hitPoints -= damage;
+    }
+
 }
